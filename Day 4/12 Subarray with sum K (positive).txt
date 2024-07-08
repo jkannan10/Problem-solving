@@ -1,0 +1,17 @@
+CLASSIC TWO POINTER APPROCH : O(2n)
+
+public static int lenOfLongSubarr (int nums[], int n, int k) {
+        int left = 0;
+        int right = 0;
+        int sum = 0;
+        int max = 0;
+        while(right < n){
+            sum += nums[right];
+            while(sum > k && left < right){
+                sum -= nums[left++];
+            }
+            if(sum == k) max = Math.max(max , right - left + 1);
+            right++;
+        }
+        return max;
+    }
