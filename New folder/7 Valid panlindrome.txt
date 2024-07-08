@@ -1,0 +1,16 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        StringBuilder sb = new StringBuilder();
+        for(char c : s.toCharArray()){
+            if(Character.isAlphabetic(c)) {
+                c = Character.toLowerCase(c);
+                 sb.append(c);
+                
+            }else if ( (c >= '0' &&  c <= '9')){
+                sb.append(c);
+            }
+        }
+        s = new String(sb);
+        return s.equals(sb.reverse().toString());
+    }
+}gi

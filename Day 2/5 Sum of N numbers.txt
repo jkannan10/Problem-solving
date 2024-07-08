@@ -1,0 +1,7 @@
+class Solution {
+    long sumOfSeries(long n) {
+        // code here
+        if( n <= 0) return 0;
+        return sumOfSeries(n - 1) + (long) Math.pow(n , 3);
+    }
+}
