@@ -1,0 +1,37 @@
+We can easily rotate array by O(k) memory space.
+By storing the last k element in the array and traverse from n - k - 1to 0 by moving the array element 
+     nums[n- cnt] = nums[i];
+     [1 , 2, 3 , 4 , 5 , 6]     k = 2;      i = 6- 2- 1 to 0
+     [1 , 2,  1 , 2  , 3 , 4]
+
+After that now store the  "k" values from begining
+ [5 , 6 , 1 , 2, 3 , 4]
+
+IN MEMORY REVERSAL :
+Reverse all the elements . [ 6 , 5 , 4, 3, 2, 1]
+Reverse first k elements . [5 , 6 , 4 , 3 , 2 , 1]
+Reverse k + 1 to n elements .[5 , 6 ,1 , 2, 3  , 4]
+
+
+class Solution {
+    public void reverse(int st , int end , int [] nums){
+        while(st < end){
+            int t = nums[st];
+            nums[st] = nums[ end ];
+            nums[end] = t;
+            st++;
+            end--;
+         }
+    }
+    public void rotate(int[] nums, int k) {
+        int  n = nums.length;
+        k = k % n;
+        if(n == 1) return;
+        reverse(0 , n - 1 , nums );
+        reverse(0 , k - 1 , nums );
+        reverse(k , n - 1 , nums);
+    }
+}
+
+   
+

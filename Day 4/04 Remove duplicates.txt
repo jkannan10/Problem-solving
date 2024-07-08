@@ -1,0 +1,21 @@
+Step 1 : init two vars left and right where right is used to iterate through array and left is used to save the array.
+Step 2 : Inside the while check whether the present value is equal to the next value then skip that index
+Step 3 : once the condition fails it comes outta the loop and then store the value at that current index .i.e Left
+Step 4 : After that increment the right  to move to the next index.
+
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int right = 0;
+        int left = 0;
+        int n = nums.length;
+        while(right < n){
+            while(right < n - 1 && nums[right] == nums[right + 1]){
+                right++;
+            }
+            nums[left++] = nums[right];
+            right++;
+        }
+        return left;
+    }
+}

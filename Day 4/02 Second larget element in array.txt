@@ -1,0 +1,12 @@
+class Solution {
+    // Function returns the second largest element
+    print2largest(arr) {
+        // Code Here
+        if(arr.length === 1) return -1;
+        const max = Math.max(...arr);
+        const res =  arr.filter((number)=> number < max);
+        const ans = Math.max(...res);
+        if(ans === max) return -1;
+        ;return ans;
+    }
+}
