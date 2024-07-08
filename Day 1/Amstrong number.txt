@@ -1,0 +1,9 @@
+class Solution {
+    static String armstrongNumber(int num) {
+        // code here
+
+        if (num <= 1000) 
+            return (num == 153 || num == 370 || num == 371 || num == 407 ) ? "true" : "false";
+        return "false";
+    }
+}
