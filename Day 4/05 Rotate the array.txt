@@ -1,3 +1,7 @@
+PROBLEM LINK : https://leetcode.com/problems/rotate-array/description/
+
+
+
 We can easily rotate array by O(k) memory space.
 By storing the last k element in the array and traverse from n - k - 1to 0 by moving the array element 
      nums[n- cnt] = nums[i];

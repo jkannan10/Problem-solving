@@ -1,3 +1,6 @@
+PROBLEM LINK : https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+
+
 Step 1 : init two vars left and right where right is used to iterate through array and left is used to save the array.
 Step 2 : Inside the while check whether the present value is equal to the next value then skip that index
 Step 3 : once the condition fails it comes outta the loop and then store the value at that current index .i.e Left

@@ -1,3 +1,6 @@
+PROBLEM LINK : https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/description/
+
+
 Step 1 : FInd where is the peak .i.e nums[i] > nums[i + 1]
 Step 2 : store the index and value .
 Step 3 : suppose if the index is -1 then it is already sorted return true.

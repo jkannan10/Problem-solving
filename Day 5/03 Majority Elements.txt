@@ -1,0 +1,29 @@
+PROBLEM LINK : https://leetcode.com/problems/majority-element/description/
+
+BAYER MOORE VOTING ALGORITHM 
+
+Step 1 : Select the candidate for the majority element by traversing into the array.
+Step 2 : Traverse the array when the count is zero  , then make the cuurent element as candidate and whenever the candidate appears increase the cnt else decrese the count.
+Step 3 : after selecting the candidate check the occurence of the candidate and it should be greater than n/ 2 else return -1;
+
+class Solution {
+    public int majorityElement(int[] nums) {
+        int count = 0;
+        int candidate = 0;
+        
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+                count = 1;
+            }
+            
+            if (num == candidate) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+        
+        return candidate;
+    }
+}

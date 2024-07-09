@@ -1,3 +1,5 @@
+PROBLEM LINK : https://www.geeksforgeeks.org/problems/sum-of-first-n-terms5843/1
+
 class Solution {
     long sumOfSeries(long n) {
         // code here

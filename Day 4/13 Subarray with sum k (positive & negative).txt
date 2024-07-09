@@ -1,3 +1,5 @@
+PROBLEM LINK : https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1
+
 Step 1 : Calc the sum upto current index .
 Step 2 : if the current sum is X and there exist an subarray with sum " K "  then there also exist an sub array of  X - K.
 Step 3 : So  by this reverse eng , we can find al the sub array of sum k .

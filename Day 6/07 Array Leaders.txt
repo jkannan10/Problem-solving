@@ -1,0 +1,17 @@
+PROBLEM LINK : https://www.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1
+
+class Solution {
+    static ArrayList<Integer> leaders(int n, int nums[]) {
+        int max = nums[ n - 1];
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(max);
+        for(int i = n - 2 ; i  >= 0 ; i--){
+            if(nums[i] >= max){
+                max = nums[i];
+                list.add(max);
+            }
+        }
+         Collections.reverse(list);
+         return list;
+    }
+}

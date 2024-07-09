@@ -1,0 +1,27 @@
+PROBLEM LINK : https://www.geeksforgeeks.org/problems/max-sum-in-sub-arrays0824/0
+
+Lets consider two element A and B and a new element comes ' C '
+
+If C is less than A | B 
+.............................B..................... C ...................A
+Then the sum would be C + A   ||   C + B which must be less than   A + B.
+
+Suppose if C is greater than A || B  or A and B then the resukt is same too.
+..........................A..........................B............................C
+we only take A and B for the calculation .
+
+So the catch is what is the maximum sum of continous two elements.
+
+
+class Solution {
+
+    public static long pairWithMaxSum(long arr[], long n) {
+        long sum = 0l;
+        long res = 0l;
+        for(int i = 0 ; i < n - 1 ; i++){
+            sum = arr[i] + arr[i + 1];
+            res = Math.max(res , sum);
+        }
+        return res;
+    }
+}

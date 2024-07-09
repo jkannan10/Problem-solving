@@ -1,3 +1,5 @@
+PROBLEM LINK : https://www.geeksforgeeks.org/problems/print-gfg-n-times/1
+
 class Solution {
 
     void printGfg(int n) {
