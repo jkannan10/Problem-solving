@@ -1,0 +1,16 @@
+PROBLEM LINK : https://leetcode.com/problems/kth-largest-element-in-an-array/
+
+
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        Queue<Integer> pq = new PriorityQueue<>((a , b)-> {return Integer.compare(b , a);});
+        for(int i : nums){
+            pq.offer(i);
+        }
+        int soln = -1;
+        while(k-- != 0){
+            soln = pq.poll();
+        }
+        return soln;
+    }
+}

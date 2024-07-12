@@ -1,8 +1,10 @@
-PROBLEM LINK : https://www.geeksforgeeks.org/problems/largest-element-in-array4009/0
-
-
 class Solution {
-    
+    /**
+    * @param number n
+    * @param number[] arr
+
+    * @returns number
+    */
     largest(n, arr) {
         // code here
         return Math.max(...arr);

@@ -1,0 +1,13 @@
+PROBLEM LINK : https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+
+
+function maxProfit(prices: number[]): number {
+    let current : number = prices[0];
+    let res: number = 0;
+    for(let i = 1 ; i < prices.length ; i++){
+        if(current < prices[i]) 
+            res += (prices[i] - current);
+        current = prices[i];
+    }
+    return res;
+};
