@@ -1,0 +1,48 @@
+PROBLEM LINK : https://leetcode.com/problems/insert-interval/description/
+
+INTUTION :
+
+Step 1 : Insert the intervals which are smaller than the given interval.
+         Starting point of existing Interval less then the ending point of given one.
+
+Step 2 : Find the existing intervals which will merge with the given interval. 
+         We can check it by , when the starting point of the current interval is less than the ending point of given interval.
+
+         Example : [[2 , 4] , [5 , 7] , [9 , 11]] [6  , 8]
+         Now , the starting point 5 is less than 8 so merge it .
+
+Step 3 : Insert the merged interval.
+
+Step 4 : Insert the intervals which are existing after the above opertaion 
+
+
+ TIME COMPLEXCITY  : O(n)
+ SPACE COMPLEXCITY : O(n) 
+
+
+
+ class Solution {
+    public int[][] insert(int[][] mat, int[] newInterval) {
+        int i = 0;
+        int n = mat.length;
+        List<int[]> list = new ArrayList<>();
+        while(i <  n && mat[i][1] < newInterval[0]){
+            list.add(mat[i]);
+            i++;
+        }
+
+        while(i < n && mat[i][0] <= newInterval[1]){
+            newInterval[0] = Math.min(mat[i][0] , newInterval[0]);
+            newInterval[1] = Math.max(mat[i][1] , newInterval[1]);
+            i++;
+        }
+        
+        list.add(newInterval);
+
+        while(i <  n){
+            list.add(mat[i]);
+            i++;
+        }
+         return list.toArray(new int[list.size()][]);
+    }
+}

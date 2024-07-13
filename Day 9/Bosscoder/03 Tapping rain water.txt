@@ -1,0 +1,29 @@
+PROBLEM LINK : https://leetcode.com/problems/trapping-rain-water/
+
+Step 1 : Maximum in suffix
+Step 2 : Maximum in prefix
+Step 3 : Min of prefix , suffix - nums[i]
+Step 4 : Sum it if it is greater than 0.
+
+
+
+
+class Solution {
+    public int trap(int[] nums) {
+        int n = nums.length;
+        int [] prefix = new int[n];
+        int [] suffix = new int[n];
+        prefix[0] = nums[0];
+        suffix[n - 1] =  nums[n - 1];
+        for(int i  = 1 ; i < n ; i++)
+            prefix[i] = Math.max(prefix[i - 1] , nums[i]);
+        for(int i = n - 2 ; i >= 0 ; i--)
+            suffix[i] = Math.max(suffix[i + 1] , nums[i]);
+        int soln = 0 ;
+        for(int i = 0 ; i < n ; i++){
+            int diff = Math.min(suffix[i] , prefix[i]) - nums[i];
+            soln = soln + (diff > 0 ? diff : 0);
+        }
+        return soln;
+    }
+}

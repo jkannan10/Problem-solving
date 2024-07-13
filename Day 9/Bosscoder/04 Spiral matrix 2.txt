@@ -1,0 +1,40 @@
+PROBLEM LINK : https://leetcode.com/problems/spiral-matrix-ii/description/
+
+class Solution {
+    public int[][] generateMatrix(int n) {
+        int [][] mat = new int[n][n];
+        int stRow = 0;
+        int stCol = 0;
+        int endRow = n- 1;
+        int endCol = n - 1;
+        int value = 1;
+        while(stRow <= endRow && stCol <= endCol){
+
+            // System.out.println(value);
+            for(int i = stCol ; i <= endCol ; i++){
+                mat[stRow][i] = value++;
+            }
+            stRow++;
+            // System.out.println(value);
+            if(stRow > endRow) break;
+
+            for(int i = stRow ; i <= endCol ; i++){
+                mat[i][endCol] = value++;
+            }
+            endCol--;
+            if(endCol < stCol) break;
+
+            for(int i = endCol ; i >= stCol ; i--){
+                mat[endRow][i] = value++;
+            }
+            endRow--;
+            if(stRow > endRow) break;
+            for(int i = endRow ; i >= stRow ; i--){
+            // System.out.println(value);
+                mat[i][stCol] = value++;
+            }
+            stCol++;
+        }
+        return mat;
+    }
+}
